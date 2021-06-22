@@ -1,0 +1,64 @@
+import cv2
+import matplotlib.pyplot as plt
+import easyocr
+import openpyxl
+
+def midpoint(lis1,lis2):
+    a=((lis1[0]+lis2[0])/2)
+    b=((lis1[1]+lis2[1])/2)
+    a=str(a)
+    b=str(b)
+    return [a,b]
+
+reader = easyocr.Reader(['en'])
+image = cv2.imread('C:/Users/chand/OneDrive/Pictures/Screenshots/eaass.png')
+res = reader.readtext('C:/Users/chand/OneDrive/Pictures/Screenshots/eaass.png') 
+
+for (bbox, text,prob) in res: 
+  # unpack the bounding box
+  (tl, tr, br, bl) = bbox
+  tl = (int(tl[0]), int(tl[1]))
+  tr = (int(tr[0]), int(tr[1]))
+  br = (int(br[0]), int(br[1]))
+  bl = (int(bl[0]), int(bl[1]))
+  cv2.rectangle(image, tl, br, (0, 255, 0), 2)
+  cv2.putText(image, text, (tl[0], tl[1] - 10),
+    cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 0, 0), 2)
+plt.rcParams['figure.figsize'] = (16,16)
+plt.imshow(image)
+plt.show()
+
+wb= openpyxl.Workbook()
+sheet=wb.active
+k=1
+l=1
+c1=sheet.cell(row=k,column=l)
+c2=sheet.cell(row=k,column=l+1)
+c1.value="TEXT"
+c2.value="COORDINATES"
+k=2
+l=1
+for i in range (0,len(res)):
+    for item in res[i] :
+        c1=sheet.cell(row=k,column=l)
+        c2=sheet.cell(row=k,column=l+1)
+        if isinstance(item,float):
+            pass
+        elif isinstance(item,str):
+            print(item)
+            c1.value=item
+        elif isinstance(item,list):
+            mid= midpoint(item[0],item[2])
+            print(mid)
+            s=','.join(mid)
+            c2.value=s
+    k+=1    
+wb.save("D:\\textextraction.xlsx")
+'''           
+        else:
+            for ele in item:
+                if isinstance(ele,list)
+                    mid= midpoint(ele
+ [0],ele[2])
+                    print(mid)
+'''
