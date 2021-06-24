@@ -1,0 +1,8 @@
+image,image_path,xmin,ymin,xmax,ymax,label,confidence,x_size,y_size
+esss.png,/content/drive/My Drive/TrainYourOwnYOLO/Data/Source_Images/Test_Images/esss.png,1685,796,1722,821,0,0.27547964453697205,1920,1080
+esss.png,/content/drive/My Drive/TrainYourOwnYOLO/Data/Source_Images/Test_Images/esss.png,1683,725,1722,754,0,0.36556515097618103,1920,1080
+esss.png,/content/drive/My Drive/TrainYourOwnYOLO/Data/Source_Images/Test_Images/esss.png,1682,592,1724,618,0,0.511160671710968,1920,1080
+esss.png,/content/drive/My Drive/TrainYourOwnYOLO/Data/Source_Images/Test_Images/esss.png,1684,660,1724,687,0,0.5346563458442688,1920,1080
+esss.png,/content/drive/My Drive/TrainYourOwnYOLO/Data/Source_Images/Test_Images/esss.png,1681,522,1725,552,0,0.6141508221626282,1920,1080
+esss.png,/content/drive/My Drive/TrainYourOwnYOLO/Data/Source_Images/Test_Images/esss.png,1667,207,1791,290,0,0.6956732869148254,1920,1080
+esss.png,/content/drive/My Drive/TrainYourOwnYOLO/Data/Source_Images/Test_Images/esss.png,1681,460,1723,485,0,0.8571988344192505,1920,1080
